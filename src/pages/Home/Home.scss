@@ -1,0 +1,14 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.282);
+  .homeContainer {
+    margin: 0px 120px;
+    border: 1px solid black;
+    height: 75vh;
+    .top {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
