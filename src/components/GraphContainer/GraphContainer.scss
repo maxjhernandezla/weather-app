@@ -1,0 +1,21 @@
+.graph {
+  padding: 20px;
+  .types {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    .spec {
+      padding: 0 10px;
+      margin-right: 10px;
+      gap: 10px;
+      color: white;
+      font-weight: 450;
+      font-size: 20px;
+
+      &.precipitations {
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+      }
+    }
+  }
+}

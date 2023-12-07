@@ -1,0 +1,39 @@
+.current {
+  padding: 25px;
+  .currentTop {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    .icon {
+      img {
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+      }
+    }
+    .temperature {
+      span {
+        font-size: 80px;
+        color: white;
+      }
+    }
+    .degrees {
+      display: flex;
+      flex-direction: row;
+      padding-top: 15px;
+      color: white;
+      p {
+        font-weight: 600;
+        font-size: 20px;
+      }
+    }
+  }
+  .currentBottom {
+    p {
+      color: #929299;
+
+      font-weight: 300;
+      font-size: 15px;
+    }
+  }
+}

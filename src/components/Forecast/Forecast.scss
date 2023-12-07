@@ -1,64 +1,22 @@
 .forecast {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  background-color: white;
-  border-left: 1px solid lightgray;
-  .days {
-    .day {
-      padding: 0 20px;
-      border-bottom: 1px solid lightgray;
-      height: 100px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
-      .weatherIconContainer {
-        display: flex;
-        flex-direction: column;
-        .weatherIcon {
-          height: 45px;
-          width: 45px;
-        }
-        .date {
-          font-weight: 300;
-          font-size: 14px;
-        }
-      }
-      .specs {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-
-        .rain {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          p {
-            color: black;
-            font-weight: 300;
-          }
-          span {
-            color: gray;
-            font-weight: 300;
-          }
-        }
-        .temp {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          p {
-            color: black;
-            font-weight: 300;
-          }
-          span {
-            color: gray;
-            font-weight: 300;
-          }
-        }
-      }
-    }
+  align-items: flex-end;
+  gap: 5px;
+  padding: 20px;
+  .title {
+    color: white;
+    font-size: 40px;
+    font-weight: 300;
+  }
+  .time {
+    color: grey;
+    font-weight: 300;
+    font-size: 25px;
+  }
+  .forecastType {
+    color: grey;
+    font-weight: 300;
+    font-size: 25px;
   }
 }

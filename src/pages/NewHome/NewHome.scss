@@ -1,0 +1,10 @@
+.newHome {
+  background-color: #212124;
+  height: 100vh;
+  .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
