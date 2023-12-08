@@ -47,7 +47,7 @@ const Graph = () => {
   return (
     <div className="graph">
       <AreaChart
-        width={window.innerWidth}
+        width={1230}
         height={150}
         style={{ paddingRight: '20px', marginLeft: '0' }}
         data={data}
