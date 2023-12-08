@@ -1,23 +1,8 @@
-.searchBar {
-  width: 100%;
-  max-width: 300px;
-  height: 60px;
-  background-color: rgba(255, 255, 255, 0.2);
+.headerContainer {
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  border-radius: 60px;
-  padding: 10px 20px;
-  form {
-    input {
-      background-color: transparent;
-      border: none;
-      outline: none;
-      font-size: 20px;
-      color: gray;
-
-      ::placeholder {
-        color: white;
-      }
-    }
-  }
+  height: 10vh;
+  border-bottom: 1px solid lightgrey;
 }
