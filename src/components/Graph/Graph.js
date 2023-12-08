@@ -1,4 +1,4 @@
-import './Graph.scss';
+import { Box } from '@chakra-ui/react';
 import {
   AreaChart,
   Area,
@@ -45,7 +45,7 @@ const Graph = () => {
   ];
 
   return (
-    <div className="graph">
+    <Box padding="0" width="100%" marginTop="25px">
       <AreaChart
         width={1230}
         height={150}
@@ -58,7 +58,7 @@ const Graph = () => {
         <Tooltip />
         <Area type="monotone" dataKey="temp" stroke="#ffcc37" fill="#554821" />
       </AreaChart>
-    </div>
+    </Box>
   );
 };
 

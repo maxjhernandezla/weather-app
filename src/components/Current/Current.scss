@@ -12,7 +12,7 @@
       }
     }
     .temperature {
-      span {
+      .currentTempText {
         font-size: 80px;
         color: white;
       }
@@ -29,9 +29,8 @@
     }
   }
   .currentBottom {
-    p {
+    .currentBottomText {
       color: #929299;
-
       font-weight: 300;
       font-size: 15px;
     }

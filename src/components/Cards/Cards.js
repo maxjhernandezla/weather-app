@@ -1,3 +1,4 @@
+import { Box, Text, Image } from '@chakra-ui/react';
 import './Cards.scss';
 
 const Cards = () => {
@@ -61,22 +62,48 @@ const Cards = () => {
   ];
 
   return (
-    <div className="cards">
+    <Box
+      display="flex"
+      flexDirection="row"
+      justifyContent="space-between"
+      margin="20px"
+    >
       {data.map((day) => (
-        <div className="card" key={day.id}>
-          <div className="cardDay">
-            <h4>{day.day}</h4>
-          </div>
-          <div className="cardImg">
-            <img src={day.img} alt="img" />
-          </div>
-          <div className="cardTemp">
-            <p className="highTemp">{day.high}°.</p>
-            <p className="lowTemp">{day.low}°.</p>
-          </div>
-        </div>
+        <Box
+          width="130px"
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          borderRadius="10px"
+          padding="15px"
+          key={day.id}
+          _hover={{ backgroundColor: '#353537' }}
+        >
+          <Box>
+            <Text color="white" fontWeight="600" fontSize="24px">
+              {day.day}
+            </Text>
+          </Box>
+          <Box width="100px" padding="10px">
+            <Image src={day.img} alt="img" width="100%" />
+          </Box>
+          <Box
+            display="flex"
+            flexDirection="row"
+            alignItems="center"
+            width="100%"
+            justifyContent="space-evenly"
+          >
+            <Text color="white" fontWeight="600" fontSize="18px">
+              {day.high}°.
+            </Text>
+            <Text color="#5a5a5e" fontWeight="600" fontSize="18px">
+              {day.low}°.
+            </Text>
+          </Box>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 

@@ -8,6 +8,7 @@ import './NewHome.scss';
 const NewHome = () => {
   return (
     <div className="newHome">
+      {/* <Header /> */}
       <div className="top">
         <Current />
         <Forecast />
