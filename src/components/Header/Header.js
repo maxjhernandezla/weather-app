@@ -7,13 +7,18 @@
 //   InputRightElement,
 // } from '@chakra-ui/react';
 // import { getCountries, getCities } from 'countries-cities';
-import SearchIcon from '@mui/icons-material/Search';
 import './Header.scss';
-import { Box, Image, Input, Text } from '@chakra-ui/react';
-const Header = () => {
-  // const countries = getCountries();
-  // const cities = getCities('Argentina');
+import { Box, Image, Text } from '@chakra-ui/react';
+import Search from '../Search/Search';
+import { useContext, useState } from 'react';
+import SearchResultList from '../SearchResultsList/SearchResultList';
+import { LocationContext } from '../../context/LocationContext';
 
+const Header = () => {
+  const [cities, setCities] = useState([]);
+  const [open, setOpen] = useState(false);
+  const { currentWeather } = useContext(LocationContext);
+  if (!cities) setOpen(false);
   return (
     <Box className="headerContainer">
       <Box>
@@ -26,31 +31,13 @@ const Header = () => {
       </Box>
       <Box>
         <Text color="white" fontSize="16px">
-          Buenos Aires, Argentina | 19°
+          {currentWeather?.location?.name}, {currentWeather?.location?.country}{' '}
+          | {currentWeather?.current?.temp_c}°
         </Text>
       </Box>
-      <Box
-        width="350px"
-        display="flex"
-        alignItems="center"
-        padding="7px"
-        borderRadius="28px"
-        backgroundColor="#f6f6f6"
-        marginRight="20px"
-      >
-        <SearchIcon className="searchIcon" />
-        <Input
-          type="text"
-          className="searchInput"
-          placeholder="Search"
-          background="transparent"
-          fontSize="16px"
-          color="#333333"
-          marginLeft="14px"
-          border="none"
-          outline="none"
-          width="300px"
-        />
+      <Box>
+        <Search setCities={setCities} setOpen={setOpen} />
+        <SearchResultList cities={cities} setOpen={setOpen} open={open} />
       </Box>
     </Box>
   );

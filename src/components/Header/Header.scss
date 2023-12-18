@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 10vh;
+  min-height: 10vh;
+  max-height: 100%;
   border-bottom: 1px solid lightgrey;
 }
