@@ -1,50 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import './Forecast.scss';
-import axios from 'axios';
-import { apiKey, apiUrl } from '../../helpers/apiKey';
+import { Box, Text } from '@chakra-ui/react';
+import { LocationContext } from '../../context/LocationContext';
 
 const Forecast = () => {
-  const [forecast, setForecast] = useState({});
-  useEffect(() => {
-    const getForecast = async () => {
-      const res = await axios.get(
-        `${apiUrl}/forecast.json?key=${apiKey}&q=paris&days=3`
-      );
-      setForecast(res.data.forecast);
-    };
-    getForecast();
-  }, []);
-  console.log(forecast.forecastday);
+  const { currentWeather, day, time } = useContext(LocationContext);
   return (
-    <div className="forecast">
-      <div className="days">
-        {forecast?.forecastday?.map((day) => (
-          <div className="day" key={day.date}>
-            <div className="weatherIconContainer">
-              <span className="date">{day.date}</span>
-              <img
-                src={day.day.condition.icon}
-                alt="icon"
-                className="weatherIcon"
-              />
-            </div>
-            <div className="specs">
-              <div className="temp">
-                <p>Temperature</p>
-
-                <span className="number">
-                  {day.day.maxtemp_c}° / {day.day.mintemp_c}°
-                </span>
-              </div>
-              <div className="rain">
-                <p>Chance of rain</p>
-                <span>{day.day.daily_chance_of_rain}%</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="flex-end"
+      gap="5px"
+      padding="20px"
+    >
+      <Text color="white" fontSize="40px" fontWeight="300">
+        Clima
+      </Text>
+      <Text color="grey" fontSize="25px" fontWeight="300">
+        {day}, {time} hs.
+      </Text>
+      <Text color="grey" fontSize="25px" fontWeight="300">
+        {currentWeather?.current?.condition.text}
+      </Text>
+    </Box>
   );
 };
 

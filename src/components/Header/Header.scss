@@ -1,30 +1,9 @@
-.header {
-  padding: 0 100px;
-  width: 100%;
-  height: 10vh;
-  background-color: black;
-  font-size: 14px;
+.headerContainer {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-around;
-  .headerRight {
-    .headerLogo {
-      width: 150px;
-      border-radius: 5px;
-      object-fit: cover;
-      cursor: pointer;
-    }
-  }
-  .headerLocation {
-    color: white;
-  }
-  .headerLeft {
-    .headerSearch {
-      border: none;
-      height: 30px;
-      width: 250px;
-      padding: 5px;
-      border-radius: 10px;
-    }
-  }
+  align-items: center;
+  min-height: 10vh;
+  max-height: 100%;
+  border-bottom: 1px solid lightgrey;
 }
