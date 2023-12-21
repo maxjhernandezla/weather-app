@@ -35,9 +35,14 @@ const Header = () => {
           | {currentWeather?.current?.temp_c}°
         </Text>
       </Box>
-      <Box>
-        <Search setCities={setCities} setOpen={setOpen} />
-        <SearchResultList cities={cities} setOpen={setOpen} open={open} />
+      <Box className="searchBar">
+        <Search setCities={setCities} setOpen={setOpen} className="bar" />
+        <SearchResultList
+          cities={cities}
+          setOpen={setOpen}
+          open={open}
+          className="list"
+        />
       </Box>
     </Box>
   );
